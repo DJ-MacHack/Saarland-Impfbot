@@ -51,6 +51,7 @@ def findLebachNacht(driver):
     
 def checkKeineTermine(driver):
     elementTerminNichtVerfügbar = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/h5')
+    time.sleep(0.05)
     if(elementTerminNichtVerfügbar.get_attribute('innerHTML')=="Keine Termine verfügbar. "):
         elementZurück = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div/button')
         elementZurück.click()
