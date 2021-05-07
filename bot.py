@@ -7,21 +7,15 @@ def loop(driver):
     while True:
         findSaarbrücken(driver)
         checkKeineTermine(driver)
-        findSaarlouis(driver)
-        checkKeineTermine(driver)
-        findNeunkirchen(driver)
-        checkKeineTermine(driver)
-        findLebach(driver)
-        checkKeineTermine(driver)
-        findLebachNacht(driver)
+        
   
 def findSaarbrücken(driver):
     elementSaarbrücken = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[1]/button[1]')
     elementSaarbrücken.click()
-    time.sleep(0.05)
+    time.sleep(0.3)
     elementWeiter = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[2]/button[2]')
     elementWeiter.click()
-    time.sleep(0.5)
+    time.sleep(0.3)
 
 def findSaarlouis(driver):
     elementSaarlouis = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[1]/button[2]')
@@ -61,12 +55,24 @@ def checkKeineTermine(driver):
         elementZurück = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div/button')
         elementZurück.click()
         time.sleep(1)
-    if(elementTerminNichtVerfügbar.get_attribute('innerHTML')=="Impftermine auswählen"):
-        elementTable = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[1]')
-        elementTermin = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[1]/div[2]/div[1]')
+    elif(elementTerminNichtVerfügbar.get_attribute('innerHTML')=="Impftermine auswählen"):
+        elementTermin = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[1]/div[2]')
         elementTermin.click()
         elementWeiter = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[2]/button[2]')
         elementWeiter.click()
+        time.sleep(0.05)
+        if(driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[2]/button[2]')):
+            elementLogin = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[2]/button[2]')
+            elementLogin.click()                         
+            time.sleep(0.5)
+            elementEmail = driver.find_element_by_xpath('//*[@id="login-form-fields"]/div[1]/input[1]')
+            elementEmail.send_keys(input("E-Mail eingeben: "))
+            elementCode = driver.find_element_by_xpath('//*[@id="login-form-fields"]/div[3]/input')
+        else:
+            elementZurück = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[2]/button[1]')
+            elementZurück.click()
+            
+        
 
 
 if __name__ == "__main__":
