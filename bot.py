@@ -65,9 +65,6 @@ def checkKeineTermine(driver):
             elementLogin = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[2]/button[2]')
             elementLogin.click()                         
             time.sleep(0.35)
-            #elementEmail = driver.find_element_by_xpath('//*[@id="login-form-fields"]/div[1]/input[1]')
-            #elementEmail.send_keys("test@mail.com")
-            #elementCode = driver.find_element_by_xpath('//*[@id="login-form-fields"]/div[3]/input')
         else:
             elementZurück = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[2]/button[1]')
             elementZurück.click()
@@ -76,6 +73,6 @@ def checkKeineTermine(driver):
 
 
 if __name__ == "__main__":
-    driver = webdriver.Chrome("C:\\chromedriver.exe")
+    driver = webdriver.Chrome("./chromedriver")
     driver.get("https://impfen-saarland.de/service/login")
     loop(driver)
