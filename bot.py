@@ -60,7 +60,7 @@ def checkKeineTermine(driver):
         elementTermin.click()
         elementWeiter = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[2]/button[2]')
         elementWeiter.click()
-        time.sleep(0.05)
+        time.sleep(0.35)
         if(driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[2]/button[2]')):
             elementLogin = driver.find_element_by_xpath('//*[@id="logged-in-area"]/div/div[2]/div[2]/button[2]')
             elementLogin.click()                         
