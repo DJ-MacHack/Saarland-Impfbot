@@ -3,7 +3,8 @@ from selenium import webdriver
 import time
 
 def loop(driver):
-    zeichen = input("Geben Sie ein beliebiges Zeichen ein, wenn Sie sich eingeloggt haben.")
+    zeichen = 0
+    zeichen = input("Geben Sie ein beliebiges Zeichen ein, wenn Sie sich eingeloggt haben. ")
     if zeichen != 0:
         driver.get("https://www.impfen-saarland.de/service/waitlist_entries")
         time.sleep(0.35)
