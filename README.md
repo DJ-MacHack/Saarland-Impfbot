@@ -1,5 +1,6 @@
 # Saarland-Impfbot
 
+[![Python application](https://github.com/Isaccseven/Vaccination-Bot-Saarland/actions/workflows/python-app.yml/badge.svg?branch=master)](https://github.com/Isaccseven/Vaccination-Bot-Saarland/actions/workflows/python-app.yml)
 
 ## Run Setup
 > To setup the project run the command 
