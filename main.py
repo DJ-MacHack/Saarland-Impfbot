@@ -1,5 +1,5 @@
-from bot1 import Bot
+from bot import Bot
 
 if __name__ == "__main__":
-    bot = Bot("https://en.wikipedia.org/wiki/JSON")
+    bot = Bot("Saarbrücken",False)
     
