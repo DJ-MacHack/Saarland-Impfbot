@@ -13,6 +13,14 @@ python setup.py
 ``` python
 python main.py
 ```
+
+## Run Program with Flask
+> To run the project run the command 
+``` python
+flask run
+```
+
+
 ## Config
 You have the possibility to choose one of the following cities
  > - Saarbrücken
