@@ -4,12 +4,14 @@ from chromedriver_py import binary_path
 
 class Bot:
 
-    def __init__(self,city,headlessMode):
+    def __init__(self,city:str,headlessMode:bool):
         self.city = city
         self.options = webdriver.ChromeOptions()
         self.options.set_headless(headless=headlessMode)
         self.options.add_argument('--window-size=1920,1080')
         self.driver = webdriver.Chrome(executable_path=binary_path,chrome_options=self.options)
+
+    def startBot(self):
         self.callWebsite()
         self.chooseCity(self.city)
         self.checkAppointment()
